@@ -1,9 +1,9 @@
 import {
-  Passport,
-  Range,
-  PASSPORT_VALIDATION_RULES,
   HEIGHT_PATTERN_REGEX,
-} from "./constants.ts";
+  Passport,
+  PASSPORT_VALIDATION_RULES,
+  Range,
+} from "../constants.ts";
 
 const isInRange = (toTest: number, { min, max }: Range) => {
   return toTest >= min && toTest <= max;

@@ -1,4 +1,4 @@
-import passwords from "./passwords.ts";
+import passwords from "./data/passwords.ts";
 
 const PASSWORD_ROW_REGEX = /^(\d+)-(\d+) ([a-z]+): (.*)+$/;
 
@@ -35,8 +35,8 @@ const validateSledPassword = (row: PasswordRow): ValidatedPasswordRow => {
 
   const characterInstances = (row.password.match(validPasswordRegex) || [])
     .length;
-  const isValid =
-    characterInstances >= row.min && characterInstances <= row.max;
+  const isValid = characterInstances >= row.min &&
+    characterInstances <= row.max;
 
   return {
     ...row,

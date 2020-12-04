@@ -1,4 +1,4 @@
-import { DEFAULT_TARGET, POSSIBLE_NUMBERS } from "./haystack.ts";
+import { DEFAULT_TARGET, POSSIBLE_NUMBERS } from "./data/haystack.ts";
 
 const getArrayProduct = (array: number[]) => array.reduce((a, b) => a * b);
 

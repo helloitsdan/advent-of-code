@@ -1,4 +1,4 @@
-import map from "./map.ts";
+import map from "./data/map.ts";
 
 const MAP_ROWS = map.split(/\n/);
 const TREE = "#";
@@ -20,7 +20,7 @@ const DEFAULT_NAVIGATION_METHOD: NavigationMethod = {
 
 const traverseMap = (
   mapToTraverse: string[] = MAP_ROWS,
-  navigationMethod: NavigationMethod = DEFAULT_NAVIGATION_METHOD
+  navigationMethod: NavigationMethod = DEFAULT_NAVIGATION_METHOD,
 ) => {
   const mapWidth = mapToTraverse[0].length;
 
@@ -42,13 +42,13 @@ const traverseMap = (
     {
       trees: 0,
       spaces: 0,
-    } as MapTraversal
+    } as MapTraversal,
   );
 };
 
 const traverseMapWithMultipleNavigationMethods = (
   mapToTraverse: string[] = MAP_ROWS,
-  navigationMethods: NavigationMethod[] = []
+  navigationMethods: NavigationMethod[] = [],
 ) =>
   navigationMethods.reduce(
     (results, navigationMethod) => {
@@ -62,7 +62,7 @@ const traverseMapWithMultipleNavigationMethods = (
     {
       trees: 1,
       spaces: 1,
-    } as MapTraversal
+    } as MapTraversal,
   );
 
 console.log(traverseMap(MAP_ROWS));
@@ -74,5 +74,5 @@ console.log(
     { horizontalHop: 5, verticalHop: 1 },
     { horizontalHop: 7, verticalHop: 1 },
     { horizontalHop: 1, verticalHop: 2 },
-  ])
+  ]),
 );

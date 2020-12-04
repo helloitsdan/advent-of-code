@@ -1,4 +1,4 @@
-import passportRows from "./passports.ts";
+import passportRows from "./data/passports.ts";
 import {
   OPTIONAL_PASSPORT_FIELDS,
   Passport,
@@ -7,7 +7,7 @@ import {
   REQUIRED_PASSPORT_FIELDS,
 } from "./constants.ts";
 
-import validatePassport from "./validatePassport.ts";
+import validatePassport from "./utils/validatePassport.ts";
 
 const isPassportField = (value: string): value is PassportField =>
   //@ts-ignore Coerce string into union field to check type
