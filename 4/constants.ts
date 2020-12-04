@@ -14,8 +14,9 @@ export type RequiredPassportField = typeof REQUIRED_PASSPORT_FIELDS[number];
 export type OptionalPasswordField = typeof OPTIONAL_PASSPORT_FIELDS[number];
 export type PassportField = RequiredPassportField | OptionalPasswordField;
 
-export type Passport = Record<RequiredPassportField, string> &
-  Partial<Record<OptionalPasswordField, string>>;
+export type Passport =
+  & Record<RequiredPassportField, string>
+  & Partial<Record<OptionalPasswordField, string>>;
 
 export interface Range {
   min: number;
