@@ -26,5 +26,5 @@ hello i am dani 🎄 i am trying my best at [Advent of Code 2020](http://advento
 the days (so far) are written in TypeScript. please run them using [Deno](https://deno.land/), like so
 
 ```
-$ deno run 1/accountingElves.ts
+$ deno run 1/index.ts
 ```

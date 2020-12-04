@@ -1,8 +1,6 @@
-import { DEFAULT_TARGET, POSSIBLE_NUMBERS } from "./data/haystack.ts";
-
 const getArrayProduct = (array: number[]) => array.reduce((a, b) => a * b);
 
-const findPair = (target = DEFAULT_TARGET, haystack = POSSIBLE_NUMBERS) => {
+export const findPair = (target: number, haystack: number[]) => {
   const splitAt = Math.round(haystack.length / 2);
   const upper = haystack.slice(splitAt);
   const lower = haystack.slice(0, splitAt);
@@ -22,7 +20,7 @@ const findPair = (target = DEFAULT_TARGET, haystack = POSSIBLE_NUMBERS) => {
   return tuple ? ([...tuple, getArrayProduct(tuple)] as const) : null;
 };
 
-const findTriplet = (target = DEFAULT_TARGET, haystack = POSSIBLE_NUMBERS) => {
+export const findTriplet = (target: number, haystack: number[]) => {
   let tuple: [number, number, number] | null = null;
 
   for (let idx = 0; idx < haystack.length; idx++) {
@@ -38,5 +36,3 @@ const findTriplet = (target = DEFAULT_TARGET, haystack = POSSIBLE_NUMBERS) => {
 
   return tuple ? [...tuple, getArrayProduct(tuple)] : null;
 };
-
-console.log(findPair(), findTriplet());

@@ -1,4 +1,3 @@
-import passportRows from "./data/passports.ts";
 import {
   OPTIONAL_PASSPORT_FIELDS,
   Passport,
@@ -35,10 +34,12 @@ const isPassportShaped = (
   return REQUIRED_PASSPORT_FIELDS.every((key) => providedKeys.includes(key));
 };
 
-const passports: Passport[] = passportRows
-  .split(/\n\n/)
-  .map(parsePassport)
-  .filter(isPassportShaped);
-const validPassports = passports.filter(validatePassport);
+const getValidPassports = (passportRows: string) => {
+  const passports: Passport[] = passportRows
+    .split(/\n\n/)
+    .map(parsePassport)
+    .filter(isPassportShaped);
+  return passports.filter(validatePassport);
+};
 
-console.log(validPassports.length);
+export default getValidPassports;
