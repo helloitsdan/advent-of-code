@@ -1,11 +1,11 @@
-import rawBoardingPasses from "./data/boardingPasses.ts";
+import boardingPasses from "./data/boardingPasses.ts";
 import {
   findMySeatID,
   findSeatIDRange,
   getBoardingPass,
 } from "./boardingPassChaos.ts";
 
-const passes = rawBoardingPasses.split("\n").map(getBoardingPass);
+const passes = boardingPasses.map(getBoardingPass);
 const { min, max } = findSeatIDRange(passes);
 const mySeat = findMySeatID(passes);
 

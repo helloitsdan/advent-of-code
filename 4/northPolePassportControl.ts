@@ -34,9 +34,8 @@ const isPassportShaped = (
   return REQUIRED_PASSPORT_FIELDS.every((key) => providedKeys.includes(key));
 };
 
-const getValidPassports = (passportRows: string) => {
+const getValidPassports = (passportRows: string[]) => {
   const passports: Passport[] = passportRows
-    .split(/\n\n/)
     .map(parsePassport)
     .filter(isPassportShaped);
   return passports.filter(validatePassport);
